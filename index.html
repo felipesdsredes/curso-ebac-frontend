@@ -1,22 +1,34 @@
-<fieldset> 
-    <legend>Formulário do felipe Santos</legend>
-        <form> 
-            <label>Nome Completo </label> 
-            <input type="text"/>
-            <br/>
-            <br/>
-            <label>Data de nascimento</label> 
-            <input type="date" />
-            <br/>
-            <br/>
-            <label>E-mail</label> 
-            <input type="email" value="Digite seu e-mail"/>
-            <br/>
-            <br/>
-            <label>Senha</label> 
-            <input type="password"/> 
-            <br/>
-            <br/>
-            <button>Cadastrar</button> 
-        </form>
-</fieldset>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário com Validação - curso EBAC</title>
+</head>
+<body>
+
+<form id="meuFormulario">
+  <label for="campoA">Campo A:</label><br>
+  <input type="number" id="campoA" name="campoA"><br>
+  <label for="campoB">Campo B:</label><br>
+  <input type="number" id="campoB" name="campoB"><br><br>
+  <input type="submit" value="Submeter">
+</form>
+
+<script type="text/javascript">
+  document.getElementById('meuFormulario').addEventListener('submit', function(e) {
+    e.preventDefault();  // Previne o envio padrão do formulário
+
+    var campoA = parseFloat(document.getElementById('campoA').value);
+    var campoB = parseFloat(document.getElementById('campoB').value);
+
+    if (campoB > campoA) {
+      alert('Formulário válido! O número B é maior que o número A.');
+    } else {
+      alert('Formulário inválido! O número B deve ser maior que o número A.');
+    }
+  });
+</script>
+
+</body>
+</html>
